@@ -3,11 +3,15 @@ local Components = require("ecs.components.defaultcomponents")
 local Entity = nil
 
 function init(self)
-
-	local world = GameECS:World()
-	Entity = world:Entity()
-	Entity:Set(Components.PositionComponent())
 	
+	local world = GameECS:World()
+	local pos = go.get_position()
+	
+	Entity = world:Entity()
+	Entity:Set(Components.Position({x = pos.x, y=pos.y}))
+	Entity:Set(Components.GameObject({value = go}))
+
+	print(string.format("Entity Init : %s",go.get_id()))
 end
 
 function final(self)
@@ -18,11 +22,10 @@ end
 
 function update(self, dt)
 
-	local pos = go.get_position()
-	
-	Entity:Set(Components.PositionComponent({x = pos.x, y=pos.y}))
+	-- local pos = go.get_position()	
+	--Entity:Set(Components.PositionComponent({x = pos.x, y=pos.y}))
+
 	Components.DemoValue = Components.DemoValue + 1
-	print(msg)
 	
 end
 

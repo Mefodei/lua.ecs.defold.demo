@@ -29,9 +29,16 @@ function GameECS:Update(dt)
 	Step = Step+1
 	Time = Time+dt
 	
-	-- print(string.format("ECS Update: step = %d | time =  %.3f sec",step, time))
+	local osTime = os.clock()
+	local ecsTime = {}
+	ecsTime.Now = osTime
+	ecsTime.Delta = dt
+	ecsTime.Frame = Step
 
-	World:Update("process", Time)
+	--print(string.format("ECS Update: step = %d | time =  %.3f sec | os time : %f",Step, Time,osTime))
+
+	World:Update("process", osTime)
+
 	
 end
 
