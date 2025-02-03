@@ -1,0 +1,97 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "background1"
+  data: "components {\n"
+  "  id: \"background\"\n"
+  "  component: \"/assets/scripts/background1.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"tmp\"\n"
+  "  component: \"/main/tmp.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"background1\"\n"
+  "  component: \"/assets/images/background1.tilemap\"\n"
+  "}\n"
+  ""
+  position {
+    z: 0.1
+  }
+}
+embedded_instances {
+  id: "background2"
+  data: "components {\n"
+  "  id: \"background2\"\n"
+  "  component: \"/assets/scripts/background2.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"background21\"\n"
+  "  component: \"/assets/images/background2.tilemap\"\n"
+  "}\n"
+  ""
+  position {
+    z: -0.1
+  }
+}
+embedded_instances {
+  id: "spaceship"
+  data: "components {\n"
+  "  id: \"spaceship\"\n"
+  "  component: \"/assets/scripts/spaceship.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"New Animation\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/images/spaceship.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -283.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1541.0
+    y: 660.0
+  }
+}
+embedded_instances {
+  id: "game_ecs"
+  data: "components {\n"
+  "  id: \"ecsworker\"\n"
+  "  component: \"/ecs/ecsworker.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "space_ship_ecs"
+  data: "components {\n"
+  "  id: \"testentityconverter\"\n"
+  "  component: \"/ecs/converters/testentityconverter.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"New Animation\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 66.0\\n"
+  "  y: 51.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/images/spaceship.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 509.0
+    y: 316.0
+  }
+}
