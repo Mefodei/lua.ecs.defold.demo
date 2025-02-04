@@ -8,7 +8,7 @@ function init(self)
 	local world = GameECS:World()
 	local pos = go.get_position()
 	local id = go.get_id()
-	
+
 	Entity = world:Entity()
 	Entity:Set(Components.Position({x = pos.x, y=pos.y}))
 	Entity:Set(Components.GameObject({value = go, id = id}))
@@ -18,9 +18,8 @@ function init(self)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	local world = GameECS:World()
+	world:Remove(Entity)
 end
 
 function update(self, dt)

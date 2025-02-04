@@ -5,12 +5,11 @@ local TestComponents = require("ecs.features.test_components")
 local System, Query = ECS.System, ECS.Query 
 local feature = {}
 local gameTime = 0.0
-local positionQuery = Query.All(Components.Position, Components.GameObject).Build()
+local positionQuery = Query.All(Components.Position, Components.GameObject,TestComponents.TestAnimation).Build()
 
 
 -- SYSTEMS
 feature.DemoSystem = System("process")
-
 
 function feature:Initialize(world)
 
@@ -39,7 +38,7 @@ function feature.DemoSystem:Update(time)
 		local gameObjectId = go.get_id()
 
 		print(string.format("Entity GameObject ID: %s",goId))
-		print(string.format("Entity GameObject : %s",goComponent.value.get_id()))
+		print(string.format("Entity GameObject : %s",goComponent.value.get_id())) -- WHAAAT!?
 		print(string.format("Entity GameObject : %s",gameObjectId))
 
 		if go then
@@ -84,6 +83,9 @@ function feature.DemoSystem:Update(time)
 	-- end
 	
 end
+
+
+
 
 return feature
 

@@ -95,3 +95,30 @@ embedded_instances {
     y: 300.0
   }
 }
+embedded_instances {
+  id: "ship_ecs1"
+  data: "components {\n"
+  "  id: \"testentityconverter\"\n"
+  "  component: \"/ecs/features/test_converter.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"New Animation\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 66.0\\n"
+  "  y: 51.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/images/spaceship.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 189.0
+    y: 387.0
+  }
+}
