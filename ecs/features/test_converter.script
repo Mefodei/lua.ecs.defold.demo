@@ -1,17 +1,20 @@
 local GameECS = require("ecs.gameecs")
 local Components = require("ecs.components.defaultcomponents")
+local TestComponents = require("ecs.features.test_components")
 local Entity = nil
 
 function init(self)
 	
 	local world = GameECS:World()
 	local pos = go.get_position()
+	local id = go.get_id()
 	
 	Entity = world:Entity()
 	Entity:Set(Components.Position({x = pos.x, y=pos.y}))
-	Entity:Set(Components.GameObject({value = go}))
-
-	print(string.format("Entity Init : %s",go.get_id()))
+	Entity:Set(Components.GameObject({value = go, id = id}))
+	Entity:Set(TestComponents.TestAnimation())
+	
+	print(string.format("Entity Init : %s",id))
 end
 
 function final(self)
