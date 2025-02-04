@@ -8,10 +8,8 @@ local gameTime = 0.0
 local positionQuery = Query.All(Components.Position, Components.GameObject).Build()
 
 
-
 -- SYSTEMS
 feature.DemoSystem = System("process")
-
 
 
 function feature:Initialize(world)
